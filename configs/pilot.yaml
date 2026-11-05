@@ -1,0 +1,35 @@
+# Pilot (Section 6). Dev data only; the test split is not read.
+examples: data/examples.jsonl
+cache: cache
+out: runs/pilot
+encoders: [e5-small, labse, xlmr-base]
+task: sentiment
+seed: 0
+resamples: 5
+evaluate_split: dev
+train_forms: [arabic]            # train on Arabic script ...
+eval_sets:
+  in_script: [arabic]
+  cross_script: [arabizi]        # ... test on human Arabizi
+  codeswitch: [codeswitch]
+select_on: in_script             # C chosen on in-script dev: no tuning on the target form
+pair_forms: [arabic, arabizi, codeswitch]
+contrast_file: data/contrast_negation.jsonl   # python -m formal_si.data.contrast
+strip_emoji_sources: [myc, tsac, tunizi, narabizi, tarc]   # all sources, as in runs/text_baselines_noemoji (like-for-like)
+input_views: [raw, deromanized]  # deromanized -> extra "derom_encode" rows (raw method only)
+dialect_probe: true
+C: [0.1, 1.0, 10.0]
+methods:
+  - {kind: raw}
+  - {kind: centering}
+  - {kind: lsar, r: 1}
+  - {kind: leace}
+  - {kind: splince}
+  - {kind: random, k: [4, 16, 64]}
+  - {kind: formal_si, k: [4, 16, 64], lam0: [0.0, 0.5, 2.0], beta: [0.0, 1.0]}
+# Run separately (not in the pilot gate): char n-gram LR, normalized-text LR,
+# and the adapter (only if G3 fails once).
+# Analysis only (not in the gates): does FORMAL-SI add anything on top of deromanization?
+derom_methods:
+  - {kind: leace}
+  - {kind: formal_si, k: [4, 16, 64], lam0: [0.0, 0.5, 2.0], beta: [0.0, 1.0]}

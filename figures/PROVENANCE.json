@@ -1,0 +1,28 @@
+{
+ "fig_E_spectra": [
+  "reports/geometry/geometry.json:spectra"
+ ],
+ "fig_F_angles": [
+  "reports/geometry/geometry.json:subspaces"
+ ],
+ "fig_D_pca": [
+  "reports/geometry/pca_*.json",
+  "reports/geometry/geometry.json:heldout_energy_removed"
+ ],
+ "fig_G_forest": [
+  "runs/confirm/test/stats.json:hypotheses",
+  "reports/depstats/test.json"
+ ],
+ "fig_H_curve": [
+  "runs/confirm/curve_dev/metrics.jsonl",
+  "runs/confirm/dev/stats.json:summary"
+ ],
+ "fig_I_tradeoff": [
+  "runs/confirm/test/stats.json:summary"
+ ],
+ "fig_J_overlap": [
+  "reports/geometry/geometry.json:task_overlap",
+  "reports/pilot/pilot_analysis.json:tests",
+  "runs/confirm/test/stats.json:summary"
+ ]
+}

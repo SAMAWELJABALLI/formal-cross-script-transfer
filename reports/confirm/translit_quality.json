@@ -1,0 +1,9 @@
+{
+  "dictionary_size_full": 9364,
+  "train_cross_fitted_cer_rule": 0.349843846015143,
+  "train_cross_fitted_cer_dict": 0.2407968641450803,
+  "dev_cer_rule": 0.3574127216062441,
+  "dev_cer_dict_full": 0.24070567801520082,
+  "n_train_groups": 998,
+  "n_dev_groups": 137
+}

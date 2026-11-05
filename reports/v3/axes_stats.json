@@ -1,0 +1,83 @@
+{
+ "e5-small": {
+  "none": {
+   "script_gap_u1_rawSD": 1.6833340622142707,
+   "sent_sep_arabizi_rawSD": 0.5592994643170672,
+   "sent_sep_arabic_rawSD": 1.5256071378405751
+  },
+  "rule": {
+   "script_gap_u1_rawSD": 0.0872538682496294,
+   "sent_sep_arabizi_rawSD": 0.37776742943944136,
+   "sent_sep_arabic_rawSD": 0.7493655040585643
+  },
+  "dict": {
+   "script_gap_u1_rawSD": 0.034176892631301345,
+   "sent_sep_arabizi_rawSD": 0.524446005291768,
+   "sent_sep_arabic_rawSD": 0.7010195989410548
+  },
+  "neural": {
+   "script_gap_u1_rawSD": 0.016017719257765496,
+   "sent_sep_arabizi_rawSD": 0.4389791557100634,
+   "sent_sep_arabic_rawSD": 0.6129647451603424
+  },
+  "human": {
+   "script_gap_u1_rawSD": 8.832260356247122e-16,
+   "sent_sep_arabizi_rawSD": 0.5088872080782324,
+   "sent_sep_arabic_rawSD": 0.6354091032579532
+  }
+ },
+ "labse": {
+  "none": {
+   "script_gap_u1_rawSD": 1.7854071946580645,
+   "sent_sep_arabizi_rawSD": 0.4125905915589229,
+   "sent_sep_arabic_rawSD": 1.2459921090195412
+  },
+  "rule": {
+   "script_gap_u1_rawSD": 0.15952467532104364,
+   "sent_sep_arabizi_rawSD": 0.2500709882231319,
+   "sent_sep_arabic_rawSD": 0.6018750426566555
+  },
+  "dict": {
+   "script_gap_u1_rawSD": 0.05005043670046655,
+   "sent_sep_arabizi_rawSD": 0.35610938155111604,
+   "sent_sep_arabic_rawSD": 0.44705814395346716
+  },
+  "neural": {
+   "script_gap_u1_rawSD": 0.028170661657080903,
+   "sent_sep_arabizi_rawSD": 0.24567533273404796,
+   "sent_sep_arabic_rawSD": 0.3426291808065245
+  },
+  "human": {
+   "script_gap_u1_rawSD": 1.6291864006381585e-15,
+   "sent_sep_arabizi_rawSD": 0.27877252940003483,
+   "sent_sep_arabic_rawSD": 0.3188719409833754
+  }
+ },
+ "xlmr-base": {
+  "none": {
+   "script_gap_u1_rawSD": 1.9277486524807768,
+   "sent_sep_arabizi_rawSD": 0.21329749891869942,
+   "sent_sep_arabic_rawSD": 0.9501472681557669
+  },
+  "rule": {
+   "script_gap_u1_rawSD": 0.05914998029689651,
+   "sent_sep_arabizi_rawSD": 0.17631879136542117,
+   "sent_sep_arabic_rawSD": 0.6782259251435481
+  },
+  "dict": {
+   "script_gap_u1_rawSD": 0.01966416551455166,
+   "sent_sep_arabizi_rawSD": 0.1552921763000613,
+   "sent_sep_arabic_rawSD": 0.5668120126595163
+  },
+  "neural": {
+   "script_gap_u1_rawSD": 0.01467882987446784,
+   "sent_sep_arabizi_rawSD": 0.20066235652104014,
+   "sent_sep_arabic_rawSD": 0.5593401137270813
+  },
+  "human": {
+   "script_gap_u1_rawSD": 3.0709643037367917e-16,
+   "sent_sep_arabizi_rawSD": 0.2159915702183122,
+   "sent_sep_arabic_rawSD": 0.5142958875626511
+  }
+ }
+}

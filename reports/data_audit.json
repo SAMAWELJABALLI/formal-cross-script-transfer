@@ -1,0 +1,118 @@
+{
+  "myc": {
+    "n": 19991,
+    "labels": {
+      "pos": 9999,
+      "neg": 9992
+    },
+    "forms": {
+      "arabic": 14509,
+      "arabizi": 4582,
+      "mixed": 900
+    },
+    "splits": {
+      "train": 15965,
+      "test": 2046,
+      "dev": 1980
+    },
+    "mean_arabic_script_ratio": 0.7208,
+    "exact_duplicate_texts": 996,
+    "groups": 18757,
+    "multi_row_groups": 753,
+    "groups_in_several_splits": 0,
+    "mean_chars": 69.4
+  },
+  "narabizi": {
+    "n": 6039,
+    "labels": {
+      "NONE": 1110,
+      "SPORT": 1392,
+      "neg": 1056,
+      "pos": 1146,
+      "POLITICS": 321,
+      "SOCIETAL": 780,
+      "RELIGION": 234
+    },
+    "forms": {
+      "arabizi": 2013,
+      "arabic": 2013,
+      "codeswitch": 2013
+    },
+    "splits": {
+      "train": 4689,
+      "dev": 639,
+      "test": 711
+    },
+    "mean_arabic_script_ratio": 0.5628,
+    "exact_duplicate_texts": 2508,
+    "groups": 1279,
+    "multi_row_groups": 1279,
+    "groups_in_several_splits": 0,
+    "mean_chars": 73.6
+  },
+  "tarc": {
+    "n": 9596,
+    "labels": {
+      "null": 9596
+    },
+    "forms": {
+      "arabizi": 4798,
+      "codeswitch": 4798
+    },
+    "splits": {
+      "train": 7676,
+      "dev": 960,
+      "test": 960
+    },
+    "mean_arabic_script_ratio": 0.3541,
+    "exact_duplicate_texts": 1359,
+    "groups": 4798,
+    "multi_row_groups": 4798,
+    "groups_in_several_splits": 0,
+    "mean_chars": 49.1
+  },
+  "tsac": {
+    "n": 17065,
+    "labels": {
+      "pos": 8852,
+      "neg": 8213
+    },
+    "forms": {
+      "arabizi": 9227,
+      "arabic": 7746,
+      "mixed": 92
+    },
+    "splits": {
+      "train": 11251,
+      "test": 4570,
+      "dev": 1244
+    },
+    "mean_arabic_script_ratio": 0.4519,
+    "exact_duplicate_texts": 1788,
+    "groups": 14955,
+    "multi_row_groups": 933,
+    "groups_in_several_splits": 0,
+    "mean_chars": 37.4
+  },
+  "tunizi": {
+    "n": 2998,
+    "labels": {
+      "pos": 1498,
+      "neg": 1500
+    },
+    "forms": {
+      "arabizi": 2998
+    },
+    "splits": {
+      "train": 2395,
+      "dev": 301,
+      "test": 302
+    },
+    "mean_arabic_script_ratio": 0.0,
+    "exact_duplicate_texts": 51,
+    "groups": 2934,
+    "multi_row_groups": 38,
+    "groups_in_several_splits": 0,
+    "mean_chars": 50.5
+  }
+}

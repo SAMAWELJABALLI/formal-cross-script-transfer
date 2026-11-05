@@ -1,0 +1,23 @@
+\begin{tabular}{@{}llrrrrrrr@{}}
+\toprule
+ & & & \multicolumn{3}{c}{S1 vs.\ S0} & \multicolumn{2}{c}{S4c vs.\ S1} & \\
+\cmidrule(lr){4-6}\cmidrule(lr){7-8}
+Task & Enc. & $n$ & corrected & degraded & $p_{\mathrm{McN}}$ & S4c only & S1 only & all fail\\
+\midrule
+NArabizi sent. & mE5 & 93 & 17 & 4 & 0.007 & 7 & 7 & 10 \\
+ & LaBSE & 93 & 15 & 7 & 0.134 & 12 & 11 & 6 \\
+ & XLM-R & 93 & 16 & 6 & 0.052 & 5 & 12 & 10 \\
+\addlinespace
+TSAC sent. & mE5 & 2649 & 173 & 226 & 0.009 & 470 & 201 & 121 \\
+ & LaBSE & 2649 & 115 & 165 & 0.003 & 485 & 165 & 120 \\
+ & XLM-R & 2649 & 346 & 257 & $<$0.001 & 504 & 721 & 415 \\
+\addlinespace
+MYC sent. & mE5 & 440 & 37 & 31 & 0.545 & 55 & 61 & 39 \\
+ & LaBSE & 440 & 24 & 46 & 0.012 & 76 & 54 & 38 \\
+ & XLM-R & 440 & 31 & 40 & 0.342 & 47 & 36 & 64 \\
+\addlinespace
+NArabizi topic & mE5 & 144 & 14 & 11 & 0.690 & 17 & 11 & 55 \\
+ & LaBSE & 144 & 29 & 22 & 0.401 & 20 & 19 & 42 \\
+ & XLM-R & 144 & 38 & 20 & 0.025 & 13 & 2 & 67 \\
+\bottomrule
+\end{tabular}

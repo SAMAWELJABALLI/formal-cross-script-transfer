@@ -1,0 +1,66 @@
+% Figure 1: methodological pipeline (TikZ, vector). Input from main.tex inside a figure environment.
+\begin{tikzpicture}[x=1cm,y=1cm,
+  every node/.style={font=\sffamily\footnotesize},
+  box/.style={draw=cInk, rounded corners=2pt, align=center, inner sep=3pt, minimum height=9mm, fill=white, line width=0.5pt},
+  frozen/.style={box, fill=cInk!12, dash pattern=on 2pt off 1pt},
+  fitted/.style={box, line width=1.3pt},
+  vary/.style={box, draw=cHuman, line width=1.1pt, minimum width=30mm, minimum height=7mm},
+  ar/.style={-{Latex[length=1.8mm]}, cInk, line width=0.6pt},
+  band/.style={draw=cInk!45, rounded corners=4pt, line width=0.4pt},
+  lab/.style={font=\sffamily\bfseries\footnotesize, anchor=north west, text=cInk},
+  phase/.style={circle, draw=cInk, fill=white, inner sep=0.6pt, font=\sffamily\bfseries\scriptsize}]
+% ---- bands
+\draw[band] (-0.2,6.55) rectangle (15.4,10.75);  \node[lab] at (-0.1,10.72) {A\; Linguistic input};
+\draw[band] (-0.2,4.25) rectangle (15.4,6.35);  \node[lab] at (-0.1,6.32) {B\; Representation};
+\draw[band] (-0.2,2.25) rectangle (15.4,4.05);  \node[lab] at (-0.1,4.02) {C\; Spectral correction};
+\draw[band] (-0.2,-1.1) rectangle (15.4,2.05); \node[lab] at (-0.1,2.02) {D\; Downstream evaluation};
+% ---- A: pair sources (only the Arabic-script side varies)
+\node[box, minimum width=27mm] (az) at (1.75,8.8) {human Arabizi $b_i$\\[-1pt]{\scriptsize 998 NArabizi train sentences}};
+\node[vary] (hu) at (6.0,10.05) {human Arabic script $a_i^{\mathrm{H}}$};
+\node[vary] (ru) at (6.0,9.2) {rule $a_i^{\mathrm{R}}$\; (CER 0.35)};
+\node[vary] (di) at (6.0,8.35) {dictionary $a_i^{\mathrm{D}}$\; (0.24)};
+\node[vary] (ne) at (6.0,7.5) {neural $a_i^{\mathrm{N}}$\; (0.19)$^{\ast}$};
+\foreach \n in {hu,ru,di,ne} \draw[ar, cHuman] (az.east) -- (\n.west);
+\node[align=left, font=\sffamily\scriptsize, text=cInk, anchor=west] at (8.3,9.35)
+  {\textcolor{cHuman}{\textbf{varied:}} source of the Arabic-script side\\(one source per condition; cross-fitted folds)\\[2pt]
+   \textbf{fixed:} Arabizi side, sentences, $n$, encoder, $k$,\\classifier protocol, resamples, test data};
+\node[box, minimum width=27mm, anchor=west] (tarc) at (12.2,7.35) {TArC human pairs$^{\ast}$\\[-1pt]{\scriptsize Tunisian, other corpus}};
+% ---- B: frozen encoder
+\node[frozen, minimum width=26mm] (enc) at (3.2,5.2) {frozen encoder $f$\\[-1pt]{\scriptsize mE5 / LaBSE / XLM-R}};
+\node[box] (emb) at (7.0,5.2) {unit-norm embeddings\\$f(a_i),\,f(b_i)\in\mathbb{R}^d$};
+\node[box] (dif) at (10.4,5.2) {pair differences\\$\Delta_i=f(a_i)-f(b_i)$};
+\node[fitted] (S) at (13.55,5.2) {$S=\frac1n\sum_i\Delta_i\Delta_i^{\top}$\\[-1pt]{\scriptsize uncentered}};
+\draw[ar] (ne.south) -- (6.0,6.1) -| (enc.north);
+\draw[ar] (az.south) |- (enc.west);
+\draw[ar] (enc) -- (emb); \draw[ar] (emb) -- (dif); \draw[ar] (dif) -- (S);
+\draw[ar, dashed] (tarc.south) -- (13.55,6.0) -- (S.north);
+% ---- C: spectral correction
+\node[fitted] (eig) at (13.55,3.1) {$S=U\Lambda U^{\top}$\\[-1pt]{\scriptsize $\lambda_1\ge\dots\ge\lambda_d$}};
+\node[fitted] (Uk) at (10.4,3.1) {top-$k$ eigenvectors\\$U_k$, $k=16$};
+\node[fitted] (Pk) at (7.0,3.1) {$P_k=I-U_kU_k^{\top}$\\[-1pt]{\scriptsize removes span$(U_k)$}};
+\node[box] (h) at (3.2,3.1) {corrected embedding\\$h(x)=P_kf(x)$ (not renormalised)};
+\draw[ar] (S) -- (eig); \draw[ar] (eig) -- (Uk); \draw[ar] (Uk) -- (Pk); \draw[ar] (Pk) -- (h);
+% ---- D: downstream
+\node[box, minimum width=27mm] (trn) at (1.75,1.15) {Arabic-script train\\$(x_j,y_j)$, 5 resamples of 90\%};
+\node[fitted] (lr) at (5.6,1.15) {logistic regression on $h$\\[-1pt]{\scriptsize $C\in\{0.1,1,10\}$ on in-script dev}};
+\node[box, minimum width=27mm] (tst) at (1.75,-0.35) {human Arabizi test\\{\scriptsize (and Arabic-script test)}};
+\node[box] (pred) at (5.6,-0.35) {predict with $h(x)=P_kf(x)$};
+\node[box] (met) at (9.45,0.4) {cross-script macro-F1 $F^{\times}$\\in-script macro-F1 $F^{=}$\\[-1pt]{\scriptsize code-switched F1 (NArabizi)}};
+\node[box] (st) at (13.4,0.4) {grouped paired bootstrap\\Holm; corpus-aware joint\\bootstrap (post hoc)};
+\draw[ar] (h.south) -- ++(0,-0.55) -| (lr.north);
+\draw[ar] (trn) -- (lr); \draw[ar] (tst) -- (pred); \draw[ar] (lr) -- (pred);
+\draw[ar] (pred.east) -- ++(0.35,0) |- (met.west); \draw[ar] (met) -- (st);
+% ---- phases
+\node[phase] at (15.05,5.95) {1}; \node[phase] at (15.05,3.75) {1};
+\node[phase] at (7.75,1.75) {2}; \node[phase] at (7.75,-0.35) {3}; \node[phase] at (15.05,1.75) {4};
+\node[align=left, font=\sffamily\scriptsize, text=cInk, anchor=south west] at (2.6,-1.0)
+  {\textbf{1} pair-subspace estimation (train pairs only)\quad \textbf{2} classifier fitting\quad
+   \textbf{3} inference-time projection\quad \textbf{4} confirmatory evaluation (test once)};
+% ---- legend
+\node[frozen, minimum height=4mm, minimum width=8mm, inner sep=1pt] (lf) at (8.6,7.35) {};
+\node[anchor=west, font=\sffamily\scriptsize] at (8.95,7.35) {frozen};
+\node[fitted, minimum height=4mm, minimum width=8mm, inner sep=1pt] at (8.6,6.9) {};
+\node[anchor=west, font=\sffamily\scriptsize] at (8.95,6.9) {estimated / fitted};
+\node[box, draw=cHuman, line width=1.1pt, minimum height=4mm, minimum width=8mm, inner sep=1pt] at (10.9,7.35) {};
+\node[anchor=west, font=\sffamily\scriptsize] at (11.25,7.35) {varied};
+\end{tikzpicture}

@@ -1,0 +1,26 @@
+\begin{tabular}{lrrr}
+\toprule
+Step & strings & wall s & threads \\
+\midrule
+encode pilot strings, mE5-small & 94,014 & 609 & n.r. \\
+encode pilot strings, LaBSE & 94,014 & 1,892 & n.r. \\
+encode pilot strings, XLM-R & 94,014 & 2,760 & n.r. \\
+encode confirmatory strings, mE5-small & 19,446 & 229 & 4 \\
+encode confirmatory strings, LaBSE & 19,446 & 559 & 4 \\
+encode confirmatory strings, XLM-R & 19,446 & 492 & 4 \\
+encode post-conf. strings, mE5-small & 13,402 & 111 & 2 \\
+encode post-conf. strings, LaBSE & 13,402 & 292 & 2 \\
+encode post-conf. strings, XLM-R & 13,402 & 280 & 2 \\
+encode all strings, LaBSE-ST & 83,645 & 3,084 & 2 \\
+encode post-conf.\ strings, LaBSE-ST & 13,405 & 310 & 2 \\
+train 3 neural transliterators &  & 350 & 1 \\
+confirmatory evaluation, dev &  & 400 & n.r. \\
+confirmatory evaluation, test &  & 747 & n.r. \\
+post-conf.\ evaluation, dev (labsest) &  & 908 & n.r. \\
+post-conf.\ evaluation, dev (main) &  & 2,059 & n.r. \\
+post-conf.\ evaluation, test (labsest) &  & 897 & n.r. \\
+post-conf.\ evaluation, test (main) &  & 2,008 & n.r. \\
+\midrule
+sum of listed steps & & 17,985 & \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,13 @@
+\begin{tabular}{l rrr rr}
+\toprule
+ & \multicolumn{3}{c}{overlap $\|U_a^\top U_b\|_F^2/k$} & \multicolumn{2}{c}{stability (human)} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-6}
+Encoder & hum.--dict. & hum.--rule & NArabizi--TArC & $n{=}50$ & split-half \\
+\midrule
+mE5-small & 0.85 & 0.69 & 0.36 & 0.43 & 0.64 \\
+LaBSE & 0.79 & 0.62 & 0.35 & 0.41 & 0.62 \\
+XLM-R & 0.85 & 0.73 & 0.52 & 0.51 & 0.73 \\
+\midrule
+random $k$-dim.\ subspace & \multicolumn{3}{c}{0.042 (mE5), 0.021 (others)} & & \\
+\bottomrule
+\end{tabular}

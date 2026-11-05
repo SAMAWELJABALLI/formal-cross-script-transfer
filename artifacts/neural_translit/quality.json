@@ -1,0 +1,6 @@
+{
+  "train_cross_fitted_cer_neural_hybrid": 0.19459524150303922,
+  "dev_cer_neural_hybrid_full": 0.16854556489106548,
+  "seconds_total": 349.6,
+  "threads": 1
+}

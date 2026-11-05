@@ -1,0 +1,14 @@
+# Direct dependencies (same constraints as pyproject.toml). Exact verified versions: requirements-lock.txt
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+pyyaml>=6
+matplotlib>=3.8
+torch>=2.3
+# Level B only
+transformers==4.49.0
+huggingface_hub>=0.26
+safetensors>=0.4
+umap-learn>=0.5
+# tests
+pytest>=8

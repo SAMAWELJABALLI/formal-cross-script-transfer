@@ -1,0 +1,76 @@
+C:
+- 0.1
+- 1.0
+- 10.0
+cache: cache
+contrast_file: data/contrast_negation.jsonl
+derom_methods:
+- kind: leace
+- beta:
+  - 0.0
+  - 1.0
+  k:
+  - 4
+  - 16
+  - 64
+  kind: formal_si
+  lam0:
+  - 0.0
+  - 0.5
+  - 2.0
+dialect_probe: true
+encoders:
+- xlmr-base
+eval_sets:
+  codeswitch:
+  - codeswitch
+  cross_script:
+  - arabizi
+  in_script:
+  - arabic
+evaluate_split: dev
+examples: data/examples.jsonl
+input_views:
+- raw
+- deromanized
+methods:
+- kind: raw
+- kind: centering
+- kind: lsar
+  r: 1
+- kind: leace
+- kind: splince
+- k:
+  - 4
+  - 16
+  - 64
+  kind: random
+- beta:
+  - 0.0
+  - 1.0
+  k:
+  - 4
+  - 16
+  - 64
+  kind: formal_si
+  lam0:
+  - 0.0
+  - 0.5
+  - 2.0
+out: runs/pilot
+pair_forms:
+- arabic
+- arabizi
+- codeswitch
+resamples: 5
+seed: 0
+select_on: in_script
+strip_emoji_sources:
+- myc
+- tsac
+- tunizi
+- narabizi
+- tarc
+task: sentiment
+train_forms:
+- arabic

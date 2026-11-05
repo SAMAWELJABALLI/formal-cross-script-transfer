@@ -1,0 +1,25 @@
+\begin{tabular}{ll rrr rrr}
+\toprule
+ & & \multicolumn{3}{c}{spectrum of $S$} & \multicolumn{2}{c}{held-out energy removed} & probe \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}\cmidrule(lr){8-8}
+Encoder & Pairs & top-16 & eff.\ rank & PR & NArabizi dev & TArC dev & acc. \\
+\midrule
+mE5-small & human (NArabizi) & 0.53 & 62 & 9 & 0.50 & 0.30 & 0.87 \\
+ & rule & 0.48 & 88 & 15 & 0.46 & 0.29 & 0.93 \\
+ & dictionary & 0.49 & 80 & 13 & 0.49 & 0.29 & 0.90 \\
+ & human (TArC) & 0.56 & 61 & 13 & 0.41 & 0.54 & -- \\
+ & none & & & & 0 & 0 & 0.98 \\
+\midrule
+LaBSE & human (NArabizi) & 0.44 & 93 & 25 & 0.41 & 0.24 & 0.84 \\
+ & rule & 0.48 & 78 & 17 & 0.36 & 0.23 & 0.88 \\
+ & dictionary & 0.46 & 83 & 20 & 0.40 & 0.23 & 0.85 \\
+ & human (TArC) & 0.56 & 56 & 12 & 0.30 & 0.54 & -- \\
+ & none & & & & 0 & 0 & 0.94 \\
+\midrule
+XLM-R & human (NArabizi) & 0.71 & 23 & 4 & 0.71 & 0.47 & 0.66 \\
+ & rule & 0.73 & 20 & 4 & 0.67 & 0.46 & 0.72 \\
+ & dictionary & 0.72 & 21 & 4 & 0.70 & 0.48 & 0.70 \\
+ & human (TArC) & 0.73 & 26 & 6 & 0.62 & 0.71 & -- \\
+ & none & & & & 0 & 0 & 0.97 \\
+\bottomrule
+\end{tabular}

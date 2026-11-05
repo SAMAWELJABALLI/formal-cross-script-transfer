@@ -1,0 +1,27 @@
+\begin{tabular}{ll r rrrr rr}
+\toprule
+ & & & \multicolumn{4}{c}{remove $P_{16}$ (pairs from)} & \multicolumn{2}{c}{transliterate input} \\
+\cmidrule(lr){4-7}\cmidrule(lr){8-9}
+Task & Encoder & In-scr. & none & human & rule & dict. & rule & dict. \\
+\midrule
+NArabizi sent. & mE5-small & 86.7 & 66.0 & 78.5 & 65.4 & 78.0 & 63.4 & \textbf{80.2} \\
+ & LaBSE & 81.9 & 68.4 & \textbf{80.2} & 69.0 & 77.5 & 69.2 & 78.9 \\
+ & XLM-R & 70.1 & 62.9 & \textbf{74.7} & 67.1 & 65.6 & 52.2 & 69.2 \\
+ & \textit{char n-gram} & 83.3 & 40.1 & -- & -- & -- & 71.6 & 82.7 \\
+\midrule
+TSAC sent. & mE5-small & 89.5 & 77.9 & 76.1 & 74.7 & 75.9 & 80.5 & \textbf{83.9} \\
+ & LaBSE & 89.7 & 77.6 & 75.6 & 73.1 & 75.3 & 66.7 & \textbf{84.2} \\
+ & XLM-R & 77.3 & 58.5 & 61.8 & \textbf{62.8} & 62.5 & 40.7 & 52.8 \\
+ & \textit{char n-gram} & 94.6 & 69.9 & -- & -- & -- & 84.1 & 89.1 \\
+\midrule
+MYC sent. & mE5-small & 79.1 & 54.9 & 66.4 & 61.7 & 62.5 & 66.3 & \textbf{69.5} \\
+ & LaBSE & 78.3 & \textbf{67.9} & 67.6 & 64.6 & 66.3 & 60.4 & 67.5 \\
+ & XLM-R & 74.5 & 61.7 & 64.0 & 63.3 & 63.7 & 60.6 & \textbf{64.1} \\
+ & \textit{char n-gram} & 83.3 & 41.3 & -- & -- & -- & 76.6 & 77.4 \\
+\midrule
+NArabizi topic & mE5-small & 47.8 & 27.3 & 30.6 & 29.5 & 29.3 & 28.2 & \textbf{34.4} \\
+ & LaBSE & 45.9 & 35.7 & \textbf{38.2} & 29.3 & 33.7 & 23.3 & 33.4 \\
+ & XLM-R & 22.3 & 9.0 & 18.1 & 18.2 & 18.7 & 18.7 & \textbf{21.3} \\
+ & \textit{char n-gram} & 26.7 & 8.0 & -- & -- & -- & 26.4 & 28.9 \\
+\bottomrule
+\end{tabular}

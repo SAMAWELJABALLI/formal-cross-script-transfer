@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: >-
+  If you use this code or the archived results, please cite the software below. The accompanying
+  manuscript has been prepared for submission to ACM Transactions on Asian and Low-Resource Language
+  Information Processing (TALLIP); it has not been accepted or published, and no DOI exists yet.
+title: "FORMAL: code and archived results for pair provenance and cross-script transfer in Maghrebi Arabic"
+type: software
+authors:
+  - family-names: JABALLI
+    given-names: Samawel
+version: 1.0.0
+date-released: 2026-11-05
+license: MIT
+repository-code: "https://github.com/SAMAWELJABALLI/formal-cross-script-transfer"
+keywords:
+  - Maghrebi Arabic
+  - Arabizi
+  - cross-script transfer
+  - transliteration
+  - multilingual sentence encoders
+  - low-rank projection
+  - pre-registration
+references:
+  - type: unpublished
+    title: "Pair Provenance Shapes Spectral Subspace Geometry for Cross-Script Transfer in Maghrebi Arabic"
+    authors:
+      - family-names: JABALLI
+        given-names: Samawel
+    notes: "Manuscript prepared for submission to ACM TALLIP. Not peer reviewed."

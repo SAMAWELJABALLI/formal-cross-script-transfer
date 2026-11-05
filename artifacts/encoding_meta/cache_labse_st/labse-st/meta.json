@@ -1,0 +1,1 @@
+{"model_id": "sentence-transformers/LaBSE", "revision": "836121a0533e5664b21c7aacc5d22951f2b8b25b", "pooling": "cls+dense(tanh)+l2", "n_texts": 83645, "seconds": 3083.7, "threads": 2}

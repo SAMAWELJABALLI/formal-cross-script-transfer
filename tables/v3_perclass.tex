@@ -1,0 +1,29 @@
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Task & system & \multicolumn{5}{c}{per-class F1 (\%), cross-script test, mean over three encoders}\\
+\midrule
+\textbf{NArabizi sent.} & \textit{class (support)} & \textit{neg} (34) & \textit{pos} (59) &  &  & \\
+ & S0 none & 58.6 & 73.6 &  &  & \\
+ & S1 human pairs & 71.7 & 84.2 &  &  & \\
+ & S3 dict.\ pairs & 66.0 & 81.8 &  &  & \\
+ & S4c neural input$^{\ast}$ & 70.7 & 82.5 &  &  & \\
+\addlinespace
+\textbf{TSAC sent.} & \textit{class (support)} & \textit{neg} (1064) & \textit{pos} (1585) &  &  & \\
+ & S0 none & 70.8 & 71.9 &  &  & \\
+ & S1 human pairs & 69.6 & 72.8 &  &  & \\
+ & S3 dict.\ pairs & 70.8 & 71.6 &  &  & \\
+ & S4c neural input$^{\ast}$ & 75.1 & 79.5 &  &  & \\
+\addlinespace
+\textbf{MYC sent.} & \textit{class (support)} & \textit{neg} (130) & \textit{pos} (310) &  &  & \\
+ & S0 none & 39.7 & 83.4 &  &  & \\
+ & S1 human pairs & 51.2 & 80.7 &  &  & \\
+ & S3 dict.\ pairs & 47.0 & 81.4 &  &  & \\
+ & S4c neural input$^{\ast}$ & 55.9 & 81.2 &  &  & \\
+\addlinespace
+\textbf{NArabizi topic} & \textit{class (support)} & \textit{none} (36) & \textit{politics} (16) & \textit{religion} (10) & \textit{societal} (31) & \textit{sport} (51)\\
+ & S0 none & 46.1 & 4.4 & 10.8 & 23.0 & 35.8\\
+ & S1 human pairs & 43.6 & 6.2 & 16.1 & 21.5 & 57.7\\
+ & S3 dict.\ pairs & 45.6 & 3.6 & 8.3 & 22.3 & 56.7\\
+ & S4c neural input$^{\ast}$ & 51.3 & 17.6 & 10.7 & 16.9 & 66.1\\
+\bottomrule
+\end{tabular}

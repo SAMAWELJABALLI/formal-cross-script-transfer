@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "formal-si"
+version = "1.0.0"
+description = "Cross-script transfer for Maghrebi Arabic: pair-specified low-rank projections on frozen multilingual encoders (FORMAL)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Samawel JABALLI" }]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "pyyaml>=6",
+    "matplotlib>=3.8",
+    "torch>=2.3",
+]
+
+[project.optional-dependencies]
+# Level B: re-encode the corpora with the frozen Hugging Face encoders (pinned revisions in src/formal_si/encode.py).
+encode = ["transformers==4.49.0", "huggingface_hub>=0.26", "safetensors>=0.4"]
+# Level B: the UMAP panel of supplementary Figure S2 (scripts/paper/v3_geometry.py).
+umap = ["umap-learn>=0.5"]
+test = ["pytest>=8"]
+
+[project.urls]
+Repository = "https://github.com/SAMAWELJABALLI/formal-cross-script-transfer"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["formal_si*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

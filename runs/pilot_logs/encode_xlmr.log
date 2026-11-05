@@ -1,0 +1,1 @@
+{"model_id": "FacebookAI/xlm-roberta-base", "pooling": "mean", "prefix": "", "n_texts": 94014, "dim": 768, "seconds": 2759.6, "sentences_per_s": 34.1, "peak_rss_mb": 3075.9, "device": "cpu", "gpu_hours": 0.0}

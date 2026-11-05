@@ -1,0 +1,2 @@
+{"model_id": "intfloat/multilingual-e5-small", "pooling": "mean", "prefix": "query: ", "n_texts": 94014, "dim": 384, "seconds": 608.9, "sentences_per_s": 154.4, "peak_rss_mb": 2106.8, "device": "cpu", "gpu_hours": 0.0}
+{"model_id": "sentence-transformers/LaBSE", "pooling": "cls", "prefix": "", "n_texts": 94014, "dim": 768, "seconds": 1892.0, "sentences_per_s": 49.7, "peak_rss_mb": 4069.0, "device": "cpu", "gpu_hours": 0.0}

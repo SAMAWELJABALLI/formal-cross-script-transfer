@@ -1,0 +1,15 @@
+{
+ "description": "Fingerprint of the locally rebuilt corpus (data/examples.jsonl). The corpus text is not distributed; this lets a user check that python -m formal_si.data.fetch && python -m formal_si.data.build reproduces the corpus used for every archived result.",
+ "data/examples.jsonl": {
+  "sha256": "52d9e7b970f3d48fc70d910cd6a2d6f5bd20a50702d757bdad50432deb607b59",
+  "rows": 55689
+ },
+ "upstream_commits": {
+  "narabizi": {"url": "https://github.com/SamiaTouileb/Narabizi", "commit": "1434f57bbaa718994f9080e4402f72d81a2962b2", "commit_date": "2021-06-01"},
+  "tarc": {"url": "https://github.com/eligugliotta/tarc", "commit": "ee2b293c5af994ff8f03cedbf8d1868f3bcd9689", "commit_date": "2024-03-12"},
+  "tunizi": {"url": "https://github.com/chaymafourati/TUNIZI-Sentiment-Analysis-Tunisian-Arabizi-Dataset", "commit": "33a341ce27d7db58198e40469f7cdc229ab3db89", "commit_date": "2020-04-29"},
+  "tsac": {"url": "https://github.com/fbougares/TSAC", "commit": "3995e702139450fe977841af1700abcdd4c789e7", "commit_date": "2017-02-17"},
+  "myc": {"url": "https://github.com/MouadJb/MYC", "commit": "645d51af6dce7bae3f27ffc3005e4d788d5ee2e4", "commit_date": "2024-06-06"}
+ },
+ "provenance": "The original runs (2026-11-04) cloned each default branch without recording commits. On 2026-11-05 the same repositories were cloned at the commits above and rebuilt with src/formal_si/data/build.py; the result was byte-identical to the corpus used for the archived runs (same SHA-256)."
+}

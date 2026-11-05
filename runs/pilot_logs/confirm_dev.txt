@@ -1,0 +1,12 @@
+narabizi_sent e5-small done 7 s
+narabizi_sent labse done 14 s
+narabizi_sent xlmr-base done 19 s
+tsac_sent e5-small done 55 s
+tsac_sent labse done 76 s
+tsac_sent xlmr-base done 100 s
+myc_sent e5-small done 197 s
+myc_sent labse done 245 s
+myc_sent xlmr-base done 307 s
+narabizi_topic e5-small done 345 s
+narabizi_topic labse done 382 s
+narabizi_topic xlmr-base done 400 s
